@@ -1,0 +1,333 @@
+{
+	"info": {
+		"_postman_id": "1c6842e5-5e32-43fc-abfa-633f1efa0fe3",
+		"name": "Adoption System API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31878676"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "angel",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "magana",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "amagana",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "amagana@example.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Chinito2,000",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "ADMIN_ROLE",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/User/Downloads/Copia de Copia de Copia de Copia de Copia de Copia de Copia de Q.135.00 (1).png"
+								}
+							]
+						},
+						"url": "http://localhost:3000/adoptionSystem/v1/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"amagana@example.com\",\r\n  \"password\": \"Chinito2,000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/adoptionSystem/v1/auth/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get User by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/adoptionSystem/v1/user/findUser/67aacffffb4ce9292c386c2d"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/adoptionSystem/v1/user/deleteUser/67aacffffb4ce9292c386c2d"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/adoptionSystem/v1/user/"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"newPassword\": \"Newpassword123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/adoptionSystem/v1/user/updatePassword/67aacffffb4ce9292c386c2d"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "John",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Doe",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "johndoe@example.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:3000/adoptionSystem/v1/user/updateUser/67aad16bfb4ce9292c386c40"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Photo",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/User/Downloads/Copia de Copia de Copia de Copia de Copia de Copia de Copia de Copia de Copia de Copia de Copia de Copia de Copia de Copia de Copia de Copia de Q.135.00 (3).png"
+								}
+							]
+						},
+						"url": "http://localhost:3000/adoptionSystem/v1/user/updatePhoto/67aad16bfb4ce9292c386c40"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pet",
+			"item": [
+				{
+					"name": "Add Pet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Max\",\r\n  \"description\": \"Un perro labrador, amigable y energético.\",\r\n  \"age\": 3,\r\n  \"type\": \"PERRO\",\r\n  \"keeper\": \"67aad16bfb4ce9292c386c40\",\r\n  \"email\": \"amagana@example.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/adoptionSystem/v1/pet/addPet"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pet by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/adoptionSystem/v1/pet/findPet/67aad6685ceb0cf4849d96e5"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Pet",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/adoptionSystem/v1/pet/deletePet/12345"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Pets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/adoptionSystem/v1/pet/"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Pet",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Buddy",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Playful dog",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "DOG",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:3000/adoptionSystem/v1/pet/updatePet/12345"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appointment",
+			"item": [
+				{
+					"name": "Create Appointment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"date\": \"2025-02-15T10:00:00Z\",\r\n  \"pet\": \"67aad6685ceb0cf4849d96e5\",\r\n  \"user\": \"67aad16bfb4ce9292c386c40\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/adoptionSystem/v1/appointment/createAppointment"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Appointments by User ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/adoptionSystem/v1/appointment/user/67aad16bfb4ce9292c386c40"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Appointment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"date\": \"2025-02-15T12:00:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/adoptionSystem/v1/appointment/update/12345"
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Appointment",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": "http://localhost:3000/adoptionSystem/v1/appointment/cancel/12345"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
